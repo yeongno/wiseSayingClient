@@ -1,12 +1,26 @@
-import { TURNOFF_MENUBAR, TURNOFF_SEARCH } from "../_actions/types";
+import {
+  TURNFORUM,
+  TURNMAP,
+  TURNMAPCOVER,
+  TURNMENU,
+  TURNMO,
+  TURNTEST,
+} from "../_actions/types";
 
 export default function turn(state = {}, action) {
   switch (action.type) {
-    case TURNOFF_MENUBAR:
-      return { ...state, turnOffMenu: action.value };
-    case TURNOFF_SEARCH:
-      return { ...state, turnOffSearch: action.value };
-      break;
+    case TURNMAP:
+      return { ...state, turnMap: action.value };
+    case TURNMENU:
+      return { ...state, turnMenu: action.value };
+    case TURNFORUM:
+      return { ...state, turnForum: action.value };
+    case TURNTEST:
+      return { ...state, turnTest: action.value };
+    case TURNMO:
+      return { ...state, turnMo: action.value };
+    case TURNMAPCOVER:
+      return { ...state, turnMapCover: action.value };
     default:
       return state;
   }

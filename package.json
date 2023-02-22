@@ -1,5 +1,5 @@
 {
-  "proxy": "http://boilernodeserver.herokuapp.com",
+  "proxy": "http://everywisesayingserver.herokuapp.com",
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
+    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.0",

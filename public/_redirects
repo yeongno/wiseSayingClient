@@ -1,2 +1,2 @@
-/proxy/* http://boilernodeserver.herokuapp.com/:splat 200
+/proxy/* http://everywisesayingserver.herokuapp.com/:splat 200
 /* /index.html 200
