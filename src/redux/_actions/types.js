@@ -31,3 +31,7 @@ export const TURNMAPCOVER = "turn_mapCover";
 export const TURNTEST = "trun_test";
 
 export const SETMAPLIST_LIST = "setmaplist_list";
+
+export const SCROLL_LANDING = "scroll_landing";
+export const SCROLL_MARK = "scroll_mark";
+export const SCROLL_NOW = "scroll_now";
