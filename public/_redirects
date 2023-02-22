@@ -1,2 +1,2 @@
-/proxy/* http://everywisesayingserver.herokuapp.com/:splat 200
+/proxy/* http://everysayingserver.herokuapp.com/:splat 200
 /* /index.html 200

@@ -1,5 +1,5 @@
 {
-  "proxy": "http://everywisesayingserver.herokuapp.com",
+  "proxy": "http://everysayingserver.herokuapp.com",
   "name": "client",
   "version": "0.1.0",
   "private": true,
