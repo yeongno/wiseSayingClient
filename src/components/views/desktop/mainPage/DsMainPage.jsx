@@ -11,11 +11,7 @@ function DsMainPage() {
   return (
     <div className="Ds-container">
       <div className="DsMainPage-container">
-        <div className="DsMainPage-wrapper">
-          DsMainPage1
-          <div className="test1">1</div>
-          <div className="test2">2</div>
-        </div>
+        <div className="DsMainPage-wrapper"></div>
       </div>
     </div>
   );

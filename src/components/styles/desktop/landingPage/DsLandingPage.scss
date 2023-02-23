@@ -1,10 +1,18 @@
 @import "../../responsive";
+body {
+  //  -ms-overflow-style: none;
+  overflow-x: hidden;
+}
 @include desktop {
   .DsLandingPage-container {
     font-weight: bold;
+    .DsDrawer-wrapper {
+      position: absolute;
+      //   height: 100vh;
+      top: 0;
+    }
     .DsLandingPage-wrapper {
       width: 1501px;
-      height: 100%;
       margin: 0 auto;
       background: yellow;
     }
@@ -12,14 +20,3 @@
 }
 @include dsSet {
 }
-// @include mobile {
-//   .DsLandingPage-container {
-//     display: none;
-//   }
-// }
-
-// @include tablet {
-//   .DsLandingPage-container {
-//     display: none;
-//   }
-// }

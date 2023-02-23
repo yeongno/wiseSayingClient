@@ -1,0 +1,20 @@
+.dsDrawer-container {
+  background: rgba($color: #a7e1efcc, $alpha: 1);
+  position: sticky;
+  top: 0;
+  opacity: 0;
+  width: 100vw;
+  .dsDrawer-wrapper {
+    font-size: 1.5em;
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    height: 3rem;
+    .logo-section {
+      width: 90%;
+    }
+    .drawer-section {
+      width: 10%;
+    }
+  }
+}
