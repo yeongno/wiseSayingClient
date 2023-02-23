@@ -30,6 +30,11 @@ $desktop: 1501px;
 
 //DeskTop의 컴포넌트 지우기
 @mixin dsSet {
+  @media (min-width: $desktop) {
+    .Ds-container {
+      position: relative;
+    }
+  }
   @media (max-width: $tablet) {
     .Ds-container {
       display: none;

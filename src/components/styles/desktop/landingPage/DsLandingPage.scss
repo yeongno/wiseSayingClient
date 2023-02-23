@@ -5,13 +5,16 @@ body {
 }
 @include desktop {
   .DsLandingPage-container {
+    // z-index: -999;
     font-weight: bold;
-    .DsDrawer-wrapper {
+    .DsDrawerLanding-wrapper {
       position: absolute;
-      //   height: 100vh;
+
       top: 0;
+      z-index: -1;
     }
     .DsLandingPage-wrapper {
+      z-index: 1;
       width: 1501px;
       margin: 0 auto;
       background: yellow;

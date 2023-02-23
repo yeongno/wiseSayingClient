@@ -17,7 +17,13 @@ function DsDrawer({ onBottom }) {
     <div className="dsDrawer-container" ref={dsDrawer_Ref}>
       <div className="dsDrawer-wrapper">
         <div className="logo-section">
-          <span>logo</span>
+          <span
+            onClick={() => {
+              console.log("akakak");
+            }}
+          >
+            logo
+          </span>
         </div>
         <div className="drawer-section">
           <span>*</span>

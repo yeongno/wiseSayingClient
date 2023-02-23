@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import useLaindgScroll from "../../../../hook/useLaindgScroll";
+import { turnMenu } from "../../../../redux/_actions/turn_action";
 import "../../../styles/desktop/mainPage/DsMainPage.scss";
 function DsMainPage() {
-  const nowy = useLaindgScroll();
-  console.log("now", nowy);
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    console.log(nowy);
-  }, [nowy]);
+    dispatch(turnMenu("MAIN_MENU"));
+  }, []);
+
   return (
     <div className="Ds-container">
       <div className="DsMainPage-container">

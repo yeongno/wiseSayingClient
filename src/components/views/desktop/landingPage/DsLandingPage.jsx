@@ -14,7 +14,7 @@ function DsLandingPage() {
   //랜딩페이지에 출력되는 높이만큼 drawer의 container 높이 값을 변경
   useEffect(() => {
     const landingHeight = window.getComputedStyle(landing_Ref.current);
-    dsDrawer_Ref.current.style.minHeight = landingHeight.height;
+    dsDrawer_Ref.current.style.height = landingHeight.height;
   }, []);
 
   //하단 상대 y값이 0 이하가 되면 플래그를 드로워에 줘서 활성화
@@ -27,6 +27,7 @@ function DsLandingPage() {
     } else {
       setOnBottom(false);
     }
+    console.log(bottomY);
   }, [bottomY]);
 
   return (
@@ -36,7 +37,7 @@ function DsLandingPage() {
           <DsHeader />
           <DsMenuBar />
         </div>
-        <div className="DsDrawer-wrapper" ref={dsDrawer_Ref}>
+        <div className="DsDrawerLanding-wrapper" ref={dsDrawer_Ref}>
           <DsDrawer onBottom={onBottom} />
         </div>
         <div className="DsLandingPage-wrapper" ref={dsbottom_Ref}>
