@@ -12,19 +12,20 @@ function DsLandingPage() {
   useEffect(() => {
     console.log(landingY);
   }, [landingY]);
+  const nowy = useLaindgScroll();
   useEffect(() => {
-    if (Children) {
-      setIsDesk(isDesk);
-    }
-  }, [Children]);
+    console.log(nowy);
+  }, [nowy]);
   return (
-    <div className="DsLandingPage-container">
-      <DsHeader />
-      <div ref={landing_Ref}>
-        <DsMenuBar />
-      </div>
-      <div className="DsLandingPage-wrapper">
-        <Outlet />
+    <div className="Ds-container">
+      <div className="DsLandingPage-container">
+        <DsHeader />
+        <div ref={landing_Ref}>
+          <DsMenuBar />
+        </div>
+        <div className="DsLandingPage-wrapper">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

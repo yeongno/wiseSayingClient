@@ -1,0 +1,76 @@
+// _responsive.scss
+
+/*반응형 화면 크기*/
+$tablet: 768px;
+$desktop: 1501px;
+// 크기가 tablet 이하
+@mixin mobile {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+// 크기가 tablet+1 이상, desktop 이하
+@mixin tablet {
+  @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
+    @content;
+  }
+}
+// 크기가 desktop 이상
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+// 크기가 tablet 이하
+@mixin mobile {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+//DeskTop의 컴포넌트 지우기
+@mixin dsSet {
+  @media (max-width: $tablet) {
+    .Ds-container {
+      display: none;
+    }
+    @content;
+  }
+  @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
+    .Ds-container {
+      display: none;
+    }
+    @content;
+  }
+}
+//Tablet의 컴포넌트 지우기
+@mixin tbSet {
+  @media (max-width: $tablet) {
+    .Tb-container {
+      display: none;
+    }
+    @content;
+  }
+  @media (min-width: $desktop) {
+    .Tb-container {
+      display: none;
+    }
+    @content;
+  }
+}
+
+//Mobile의 컴포넌트 지우기
+@mixin mbSet {
+  @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
+    .Mb-container {
+      display: none;
+    }
+    @content;
+  }
+  @media (min-width: $desktop) {
+    .Mb-container {
+      display: none;
+    }
+    @content;
+  }
+}

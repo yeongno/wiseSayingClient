@@ -1,6 +1,13 @@
-.DsMainPage-container {
-  height: 500vh;
-  width: 100%;
-  .DsMainPage-wrapper {
+@import "../../responsive";
+
+@include desktop {
+  .DsMainPage-container {
+    font-weight: bold;
+    height: 500vh;
+    width: 100%;
+    .DsMainPage-wrapper {
+      font-weight: bold;
+      display: flex;
+    }
   }
 }

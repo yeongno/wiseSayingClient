@@ -1,0 +1,7 @@
+@import "../../responsive";
+
+@include tablet {
+  .TbMainPage-container {
+    font-weight: bold;
+  }
+}

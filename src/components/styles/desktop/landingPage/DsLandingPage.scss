@@ -1,7 +1,25 @@
-.DsLandingPage-container {
-  .DsLandingPage-wrapper {
-    width: 1501px;
-    height: 100%;
-    margin: 0 auto;
+@import "../../responsive";
+@include desktop {
+  .DsLandingPage-container {
+    font-weight: bold;
+    .DsLandingPage-wrapper {
+      width: 1501px;
+      height: 100%;
+      margin: 0 auto;
+      background: yellow;
+    }
   }
 }
+@include dsSet {
+}
+// @include mobile {
+//   .DsLandingPage-container {
+//     display: none;
+//   }
+// }
+
+// @include tablet {
+//   .DsLandingPage-container {
+//     display: none;
+//   }
+// }
