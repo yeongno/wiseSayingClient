@@ -3,20 +3,23 @@
   position: sticky;
   top: 0;
   opacity: 0;
+  height: 0;
   width: 100vw;
   .dsDrawer-wrapper {
-    // pointer-events: visible;
-    z-index: 2;
-    font-size: 1.5em;
-    width: 1400px;
     margin: 0 auto;
+    padding-top: 0.4rem;
+    font-size: 1.5em;
+    width: 1501px;
     display: flex;
-    height: 3rem;
     .logo-section {
-      width: 0%;
+      width: 1501px;
+      position: absolute;
+      text-align: center;
     }
     .drawer-section {
-      width: 0%;
+      width: 1501px;
+      text-align: end;
+      position: absolute;
     }
   }
 }

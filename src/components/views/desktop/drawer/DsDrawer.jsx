@@ -8,8 +8,10 @@ function DsDrawer({ onBottom }) {
   useEffect(() => {
     if (onBottom) {
       dsDrawer_Ref.current.style.opacity = "1";
+      dsDrawer_Ref.current.style.height = "3rem";
     } else {
       dsDrawer_Ref.current.style.opacity = "0";
+      dsDrawer_Ref.current.style.height = "0";
     }
   }, [onBottom]);
 

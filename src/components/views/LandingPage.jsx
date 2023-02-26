@@ -27,13 +27,6 @@ function LandingPage() {
   return (
     //각 디바이스의 랜딩 페이지
     <div>
-      <span
-        onClick={() => {
-          console.log("dkdkdk");
-        }}
-      >
-        aa
-      </span>
       <DsLandingPage />
       <MbLandingPage />
       <TbLandingPage />

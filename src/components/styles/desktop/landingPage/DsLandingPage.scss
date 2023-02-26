@@ -1,20 +1,16 @@
 @import "../../responsive";
 body {
-  //  -ms-overflow-style: none;
   overflow-x: hidden;
 }
 @include desktop {
   .DsLandingPage-container {
-    // z-index: -999;
     font-weight: bold;
-    .DsDrawerLanding-wrapper {
-      position: absolute;
+    position: absolute;
 
-      top: 0;
-      z-index: -1;
-    }
+    top: 0;
+    z-index: -1;
     .DsLandingPage-wrapper {
-      z-index: 1;
+      //   z-index: 1;
       width: 1501px;
       margin: 0 auto;
       background: yellow;
