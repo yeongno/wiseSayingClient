@@ -1,4 +1,11 @@
 @import "../../responsive";
 
+.TbLandingPage-container {
+  position: absolute;
+  top: 0;
+  .TbLandingPage-wrapper {
+  }
+}
+
 @include tbSet {
 }

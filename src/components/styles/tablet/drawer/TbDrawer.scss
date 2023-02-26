@@ -1,0 +1,23 @@
+.TbDrawer-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 2rem;
+  background: rgba($color: #a7e1efcc, $alpha: 1);
+  font-size: 1.3em;
+  .TbDrawer-wrapper {
+    display: flex;
+    width: 100%;
+    .logo-section {
+      width: 100vw;
+      position: absolute;
+      text-align: center;
+    }
+    .drawer-section {
+      width: 98vw;
+
+      text-align: end;
+      position: absolute;
+    }
+  }
+}

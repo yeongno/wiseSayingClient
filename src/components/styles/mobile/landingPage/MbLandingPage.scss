@@ -1,4 +1,8 @@
 @import "../../responsive";
-
+.MbLandingPage-container {
+  position: absolute;
+  .MbLandingPage-wrapper {
+  }
+}
 @include mbSet {
 }
