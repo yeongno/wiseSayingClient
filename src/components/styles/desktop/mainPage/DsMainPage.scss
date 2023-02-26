@@ -2,6 +2,7 @@
 
 @include desktop {
   .DsMainPage-container {
+    z-index: 1;
     font-weight: bold;
     height: 500vh;
     width: 100%;
