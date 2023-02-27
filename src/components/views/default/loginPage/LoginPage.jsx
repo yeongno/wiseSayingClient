@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { turnMenu } from "../../../../redux/_actions/turn_action";
+import DsLoginPage from "../../desktop/loginPage/DsLoginPage";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -11,7 +12,11 @@ function LoginPage() {
     dispatch(turnMenu("LOGIN_MENU"));
   }, []);
 
-  return <div>LoginPage</div>;
+  return (
+    <div>
+      <DsLoginPage />
+    </div>
+  );
 }
 
 export default LoginPage;

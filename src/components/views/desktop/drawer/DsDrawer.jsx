@@ -46,11 +46,14 @@ function DsDrawer({ onBottom }) {
     if (onDrawer) {
       Drawer_Ref.current.style.width = "100vw";
       Content_Ref.current.style.display = "";
+      Menu_Ref.current.style.pointerEvents = "unset";
     } else {
       Drawer_Ref.current.style.width = "0";
       Content_Ref.current.style.display = "none";
       document.body.style.height = "";
       document.body.style.overflow = "";
+      //opacity로 설정 되어 있으므로 해당 영역 터치 가능 하게 변경
+      Menu_Ref.current.style.pointerEvents = "none";
     }
   }, [onDrawer]);
 

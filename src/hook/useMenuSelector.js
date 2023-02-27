@@ -24,6 +24,10 @@ const useMenuSelector = () => {
       //MenuBar를 클릭 시 디포트 페이지인 TEST1으로 이동 할 수 있게 설정
       navigate("/test3");
     },
+    LOGIN_MENU() {
+      navigate("/login");
+    },
+
     // 기본 픽 페이지
     SETTEST_MENU() {
       //클릭 하였을 때는 COMMUNITY_MAIN() 실행
