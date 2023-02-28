@@ -25,7 +25,7 @@ function DsDrawer({ onBottom }) {
     } else {
       dsDrawer_Ref.current.style.opacity = "0";
       dsDrawer_Ref.current.style.height = "0";
-      //opacity만 손댔으므로 해당 영역 포인터 작동하게
+      //opacity만 손댔으므로 해당 영역 포인터 가능 하게
       Menu_Ref.current.style.pointerEvents = "none";
     }
   }, [onBottom]);

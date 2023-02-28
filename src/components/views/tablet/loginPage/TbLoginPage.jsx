@@ -1,5 +1,5 @@
 import React from "react";
-import useGoogleLogin from "../../../../hook/useGoogleLogin";
+import useGoogleLogin from "../../../../hook/login/useGoogleLogin";
 
 function TbLoginPage() {
   const login = useGoogleLogin;
