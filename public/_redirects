@@ -1,3 +1,3 @@
 /proxy/* http://everysayingserver.herokuapp.com/:splat 200
-/quotes/* http://favqs.com/:splat 200
+/quotes/* netlify functions:create/:splat 200
 /* /index.html 200
