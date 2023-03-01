@@ -1,6 +1,6 @@
 // netlify/functions/qotd.js
 
-const { default: quotesInstance } = require("../quotesInstance");
+const { default: quotesInstance } = require("../src/quotesInstance");
 
 exports.handler = async (event, context) => {
   const apiUrl = "https://favqs.com/api/qotd";
