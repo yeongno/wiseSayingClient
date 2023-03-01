@@ -6,6 +6,7 @@ import MbMainPage from "../../mobile/mainPage/MbMainPage";
 import TbMainPage from "../../tablet/mainPage/TbMainPage";
 
 function MainPage() {
+  const [delta, setDelta] = useState(1);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(turnMenu("MAIN_MENU"));

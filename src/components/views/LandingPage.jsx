@@ -16,27 +16,10 @@ function LandingPage() {
   useLaindgScroll();
   useMenuSelector();
   const navigate = useNavigate();
-  const [test, setTest] = useState();
   useEffect(() => {
     navigate("/mainpage");
-
-    // heroku 서버 테스트
-    const data = async () =>
-      await instance
-        .post("/api/posts/getPost", { topic: "notice" })
-        .then((response) => {
-          console.log("asdv");
-          if (response.data.success) {
-            setTest(response.data.posts);
-            console.log("aa", response);
-          } else {
-            alert("게시글 정보를 가져오는데 실패하였습니다.");
-          }
-        });
-    data();
   }, []);
 
-  console.log(test);
   return (
     //각 디바이스의 랜딩 페이지
     <div>

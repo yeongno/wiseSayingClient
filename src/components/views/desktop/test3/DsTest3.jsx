@@ -1,24 +1,23 @@
 import { async } from "@firebase/util";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import instance from "../../../../axios";
-import quotesInstance from "../../../../quotesInstance";
 import { turnMenu } from "../../../../redux/_actions/turn_action";
 
 function DsTest3() {
   const dispatch = useDispatch();
+  const [data1, setData] = useState("");
   useEffect(() => {
     dispatch(turnMenu("TEST3_MENU"));
-    // quotesInstance.get("/api/qotd").then((data) => {
-    //   console.log(data);
-    // });
-    instance.get("/api/qotds/qotd").then((res) => {
-      console.log("qotds", res);
-    });
+    (async () => {
+      await instance.get("/api/qotds/qotd").then((res) => {
+        setData(res.data.quote.body);
+      });
+    })();
   }, []);
 
-  return <div className="Ds-container"></div>;
+  return <div className="Ds-container">{data1}</div>;
 }
 
 export default DsTest3;
