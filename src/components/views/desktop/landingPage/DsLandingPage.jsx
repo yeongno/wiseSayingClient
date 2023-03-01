@@ -19,7 +19,6 @@ function DsLandingPage() {
     } else {
       setOnBottom(false);
     }
-    console.log(bottomY);
   }, [bottomY]);
 
   return (

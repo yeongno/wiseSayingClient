@@ -11,7 +11,7 @@ function DsTest2() {
     dispatch(turnMenu("TEST2_MENU"));
   }, []);
 
-  return <div>DsTest2</div>;
+  return <div className="Ds-container">DsTest2</div>;
 }
 
 export default DsTest2;

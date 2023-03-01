@@ -24,10 +24,7 @@ function DsMenuBar() {
         </span>
         <span
           onClick={() => {
-            console.log("agaga");
-
             dispatch(turnMenu("TEST3_MENU"));
-            console.log("agaga");
           }}
         >
           Test3

@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import React, { useEffect } from "react";
 import { auth, firebaseInstance } from "../../config/FireBaseConfig";
 
