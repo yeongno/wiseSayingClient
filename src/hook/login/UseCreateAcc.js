@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { auth, firebaseInstance } from "../../config/FireBaseConfig";
 
-const UseCreateAcc = async (email, password) => {
+const UseCreateAcc = async (email, password, nickName) => {
   try {
-    await auth.createUserWithEmailAndPassword(email, password);
+    const { user } = await auth.createUserWithEmailAndPassword(email, password);
+    await user.updateProfile({
+      displayName: nickName,
+    });
   } catch (error) {
     console.log(error);
     // setError(error.message);

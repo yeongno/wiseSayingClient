@@ -5,7 +5,6 @@ import UseCreateAcc from "../../../../hook/login/UseCreateAcc";
 // import useCreateAcc from "../../../../hook/login/useCreateAcc";
 import useGoogleLogin from "../../../../hook/login/useGoogleLogin";
 import UseLoginAcc from "../../../../hook/login/UseLoginAcc";
-import RegisterSection from "./RegisterSection";
 
 function DsLoginPage() {
   const login = useGoogleLogin;
@@ -95,7 +94,6 @@ function DsLoginPage() {
             Continue with Github
           </button>
         </div>
-        {newAccount && <RegisterSection />}
       </div>
     </div>
   );

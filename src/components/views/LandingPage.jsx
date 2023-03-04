@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 // import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import instance from "../../axios";
+import { auth } from "../../config/FireBaseConfig";
 import useLaindgScroll from "../../hook/useLaindgScroll";
 import useMenuSelector from "../../hook/useMenuSelector";
 import DsLandingPage from "./desktop/landingPage/DsLandingPage";
@@ -23,6 +24,8 @@ function LandingPage() {
   return (
     //각 디바이스의 랜딩 페이지
     <div>
+      {auth?.currentUser?.displayName}
+
       <DsLandingPage />
       <MbLandingPage />
       <TbLandingPage />
