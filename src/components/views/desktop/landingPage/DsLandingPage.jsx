@@ -11,7 +11,7 @@ function DsLandingPage() {
   const topSection_Ref = useRef();
 
   //header, menuBar의 활성화 플래그
-  const [onTopSection, setOnTopSection] = useState(true);
+  const [onTopSection, setOnTopSection] = useState(false);
   const turnMenu = useSelector((state) => state.turn.turnMenu);
 
   //하단 상대 y값이 0 이하가 되면 플래그를 드로워에 줘서 활성화

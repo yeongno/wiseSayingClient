@@ -1,14 +1,14 @@
 import React from "react";
-import useGoogleLogin from "../../../../hook/login/useGoogleLogin";
+import useGoogleLogin from "../../../../hook/login/UseGoogleLogin";
 
 function MbLoginPage() {
-  const login = useGoogleLogin;
+  // const login = useGoogleLogin();
   return (
     <div className="Mb-container">
       <div className="MbLoginPage-container">
         <div className="MbLoginPage-wrapper">
           <span>Mobile LoginPage</span> <br />
-          <button onClick={login}>login</button>
+          <button>login</button>
         </div>
       </div>
     </div>

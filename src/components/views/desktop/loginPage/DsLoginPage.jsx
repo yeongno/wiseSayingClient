@@ -1,18 +1,21 @@
 import { async } from "q";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth, firebaseInstance } from "../../../../config/FireBaseConfig";
 import UseCreateAcc from "../../../../hook/login/UseCreateAcc";
 // import useCreateAcc from "../../../../hook/login/useCreateAcc";
-import useGoogleLogin from "../../../../hook/login/useGoogleLogin";
+import useGoogleLogin from "../../../../hook/login/UseGoogleLogin";
 import UseLoginAcc from "../../../../hook/login/UseLoginAcc";
+import LoginSection from "./LoginSection";
 import RegisterSection from "./RegisterSection";
+import "../../../styles/desktop/loginPage/DsLoginPage.scss";
 
 function DsLoginPage() {
-  const login = useGoogleLogin;
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newAccount, setNewAccount] = useState(true);
+  const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
 
   const onChange = (event) => {
@@ -30,8 +33,6 @@ function DsLoginPage() {
   const onSocialClick = (event) => {
     const socialName = event.target.name;
     if (socialName == "google") {
-      const login = useGoogleLogin;
-      login();
     }
     if (socialName == "github") console.log(socialName);
   };
@@ -47,7 +48,13 @@ function DsLoginPage() {
     <div className="Ds-container">
       <div className="DsLoginPage-container">
         <div className="DsLoginPage-wrapper">
-          <button onClick={login}>login with google</button>
+          <span
+            onClick={() => {
+              navigate("/mainpage");
+            }}
+          >
+            EveryQT
+          </span>
           <br />
           <button
             onClick={() => {
@@ -58,7 +65,6 @@ function DsLoginPage() {
             logout
           </button>
           <br />
-          {/* <button onClick={useCreateAcc}>login</button> */}
         </div>
         <form onSubmit={onSubmit}>
           <input
@@ -88,14 +94,11 @@ function DsLoginPage() {
         </span>
         {/* <button onClick={onCreateAcc}>aa</button> */}
         <div>
-          <button name="google" onClick={onSocialClick}>
-            Continue with Google
-          </button>
           <button name="github" onClick={onSocialClick}>
             Continue with Github
           </button>
         </div>
-        {newAccount && <RegisterSection />}
+        {newAccount ? <RegisterSection /> : <LoginSection></LoginSection>}
       </div>
     </div>
   );

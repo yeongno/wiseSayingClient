@@ -1,14 +1,14 @@
 import React from "react";
-import useGoogleLogin from "../../../../hook/login/useGoogleLogin";
+import useGoogleLogin from "../../../../hook/login/UseGoogleLogin";
 
 function TbLoginPage() {
-  const login = useGoogleLogin;
+  // const login = useGoogleLogin();
   return (
     <div className="Tb-container">
       <div className="TbLoginPage-container">
         <div className="TbLoginPage-wrapper">
           <span>Tablate LoginPage</span> <br />
-          <button onClick={login}>login</button>
+          <button>login</button>
         </div>
       </div>
     </div>
