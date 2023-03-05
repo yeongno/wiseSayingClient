@@ -1,5 +1,42 @@
 .DsLoginPage-container {
-  border: solid black 1px;
+  margin: auto;
+  width: 50rem;
+  border: solid rgba(148, 146, 146, 0.445) 3px;
+  border-radius: 15px;
+  margin-top: 10rem;
   .DsLoginPage-wrapper {
+    .LoginTopsSection-container {
+      text-align: center;
+      span:nth-child(1) {
+        cursor: pointer;
+        font-size: 5em;
+        font-weight: bold;
+      }
+    }
+    .LoginBottomSection-container {
+      width: 40rem;
+      margin: auto;
+      button {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        border-radius: 3px;
+        font-size: 3em;
+        color: white;
+        cursor: pointer;
+        height: 4rem;
+        background: rgb(105, 167, 173);
+        border: none;
+      }
+      button:hover {
+        background: rgb(148, 255, 173);
+      }
+      .orSection__span {
+        text-align: center;
+        font-size: 3em;
+      }
+      img {
+      }
+    }
   }
 }

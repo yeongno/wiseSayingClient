@@ -1,6 +1,5 @@
 import { async } from "@firebase/util";
 import React, { useState } from "react";
-import { GoogleAuthProvider, signInWithPopup } from "@firebase/auth";
 
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../../../config/FireBaseConfig";
@@ -24,23 +23,11 @@ function LoginSection() {
         alert(`${auth.currentUser.displayName}님 반갑습니다.`);
       } catch (error) {
         console.log(error);
+        alert("정보를 확인 해주세요");
       }
-    } else {
-      alert("정보를 확인 해주세요");
     }
   };
-  const onSocialClick = async (event) => {
-    const provider = new GoogleAuthProvider(); // provider를 구글로 설정
-    await signInWithPopup(auth, provider) // popup을 이용한 signup
-      .then((data) => {
-        alert(`${auth.currentUser.displayName}님 반갑습니다.`);
-        navigate("/mainpage");
-      })
-      .catch((err) => {
-        alert("정보를 다시 한번 확인해 주세요");
-        console.log(err);
-      });
-  };
+
   return (
     <div className="loginSection-container">
       <div className="loginSection-wrapper">
@@ -60,11 +47,6 @@ function LoginSection() {
             <button onClick={onSubmit}>로그인 하기</button>
           </div>
         </div>
-        <img
-          src="/assets/google/googleSignUp.png"
-          alt=""
-          onClick={onSocialClick}
-        />{" "}
       </div>
     </div>
   );

@@ -92,25 +92,18 @@ function RegisterSection() {
       try {
         await UseCreateAcc(email, password, nickName);
         console.log("create", auth.currentUser);
+        navigate("/mainpage");
       } catch (error) {
         console.log(error);
+        alert("정보를 다시 한번 확인해 주세요");
       }
     } else {
-      console.log("입력하세요", matchEmail, checkPassword, confirmPW, nickName);
+      alert("정보를 다시 한번 확인해 주세요");
     }
   };
   return (
     <div className="registerSection-container">
       <div className="registerSection-wrapper">
-        <div className="topLogo-container">
-          <span
-            onClick={() => {
-              navigate("/mainpage");
-            }}
-          >
-            EveryQT
-          </span>
-        </div>
         <div className="form-container">
           {!checkEmail && (
             <span

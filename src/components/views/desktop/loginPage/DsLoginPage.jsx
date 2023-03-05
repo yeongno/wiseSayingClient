@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { auth, firebaseInstance } from "../../../../config/FireBaseConfig";
 import UseCreateAcc from "../../../../hook/login/UseCreateAcc";
 // import useCreateAcc from "../../../../hook/login/useCreateAcc";
-import useGoogleLogin from "../../../../hook/login/UseGoogleLogin";
 import UseLoginAcc from "../../../../hook/login/UseLoginAcc";
 import LoginSection from "./LoginSection";
 import RegisterSection from "./RegisterSection";
 import "../../../styles/desktop/loginPage/DsLoginPage.scss";
+import { GoogleAuthProvider, signInWithPopup } from "@firebase/auth";
 
 function DsLoginPage() {
   const navigate = useNavigate();
@@ -17,88 +17,57 @@ function DsLoginPage() {
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
-
-  const onChange = (event) => {
-    const {
-      target: { name, value },
-    } = event;
-    if (name === "email") {
-      setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
-    }
+  const onSocialClick = async (event) => {
+    const provider = new GoogleAuthProvider(); // provider를 구글로 설정
+    await signInWithPopup(auth, provider) // popup을 이용한 signup
+      .then((data) => {
+        alert(`${auth.currentUser.displayName}님 반갑습니다.`);
+        navigate("/mainpage");
+      })
+      .catch((err) => {
+        alert("정보를 다시 한번 확인해 주세요");
+        console.log(err);
+      });
   };
-
-  const toggleAccount = () => setNewAccount((prev) => !prev);
-  const onSocialClick = (event) => {
-    const socialName = event.target.name;
-    if (socialName == "google") {
-    }
-    if (socialName == "github") console.log(socialName);
-  };
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    if (newAccount) {
-      await UseCreateAcc(email, password);
-    } else {
-      await UseLoginAcc(email, password);
-    }
+  const onRegister = () => {
+    setNewAccount(!newAccount);
   };
   return (
     <div className="Ds-container">
       <div className="DsLoginPage-container">
         <div className="DsLoginPage-wrapper">
-          <span
-            onClick={() => {
-              navigate("/mainpage");
-            }}
-          >
-            EveryQT
-          </span>
-          <br />
-          <button
-            onClick={() => {
-              console.log(auth.currentUser);
-              auth.signOut();
-            }}
-          >
-            logout
-          </button>
-          <br />
+          <div className="LoginTopsSection-container">
+            <span
+              onClick={() => {
+                navigate("/mainpage");
+              }}
+            >
+              EveryQT
+            </span>
+          </div>
+
+          {newAccount ? <RegisterSection /> : <LoginSection></LoginSection>}
+          <div className="LoginBottomSection-container">
+            <div className="orSection__span">
+              <span>or</span>
+            </div>
+            {newAccount ? (
+              <button onClick={onRegister}>
+                <span>로그인하기</span>
+              </button>
+            ) : (
+              <button onClick={onRegister}>
+                <span>가입하기</span>
+              </button>
+            )}
+            <br />
+            <img
+              src="/assets/google/googleSignUp.png"
+              alt=""
+              onClick={onSocialClick}
+            />{" "}
+          </div>
         </div>
-        <form onSubmit={onSubmit}>
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            required
-            value={email}
-            onChange={onChange}
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            required
-            value={password}
-            onChange={onChange}
-          />
-          <input
-            type="submit"
-            value={newAccount ? "Create Account" : "Sign In"}
-          />
-          {error}
-        </form>
-        <span onClick={toggleAccount}>
-          {newAccount ? "Sign in" : "Create Account"}
-        </span>
-        {/* <button onClick={onCreateAcc}>aa</button> */}
-        <div>
-          <button name="github" onClick={onSocialClick}>
-            Continue with Github
-          </button>
-        </div>
-        {newAccount ? <RegisterSection /> : <LoginSection></LoginSection>}
       </div>
     </div>
   );
