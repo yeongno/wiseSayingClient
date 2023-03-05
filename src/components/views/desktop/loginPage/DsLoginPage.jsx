@@ -17,6 +17,7 @@ function DsLoginPage() {
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
+
   const onSocialClick = async (event) => {
     const provider = new GoogleAuthProvider(); // provider를 구글로 설정
     await signInWithPopup(auth, provider) // popup을 이용한 signup

@@ -29,6 +29,9 @@ function DsDrawer({ onBottom }) {
       Menu_Ref.current.style.pointerEvents = "none";
     }
   }, [onBottom]);
+  useEffect(() => {
+    console.log("top");
+  }, []);
 
   //메뉴 버튼 클릭 시 상세 메뉴드로워 뷰 활성화
   const onMenu = () => {

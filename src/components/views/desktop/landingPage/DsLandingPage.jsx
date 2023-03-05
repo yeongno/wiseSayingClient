@@ -34,8 +34,20 @@ function DsLandingPage() {
     }
   }, [turnMenu]);
 
+  //각 디바이스 마다 outlet을 불러오게 함으로 랜더링이 중복됨을 방지 하기 위한 루트 코드
+  const Ds_Ref = useRef();
+  const activity = Ds_Ref.current?.style.display;
+  const [render, setRender] = useState(true);
+  useEffect(() => {
+    if (activity == "none") {
+      setRender(false);
+    } else {
+      setRender(true);
+    }
+  }, []);
+
   return (
-    <div className="Ds-container">
+    <div className="Ds-container" ref={Ds_Ref}>
       <div className="DsLandingPage-container">
         <div className="DsLandingPage-topSection" ref={topSection_Ref}>
           {onTopSection ? (
@@ -49,7 +61,7 @@ function DsLandingPage() {
         </div>
         <DsDrawer onBottom={onBottom} />
         <div className="DsLandingPage-wrapper" ref={dsbottom_Ref}>
-          <Outlet />
+          {render ? <></> : <Outlet />}
         </div>
       </div>
     </div>
