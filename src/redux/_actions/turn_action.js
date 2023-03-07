@@ -1,4 +1,5 @@
 import {
+  TURNDEVICE,
   TURNFORUM,
   TURNMAP,
   TURNMAPCOVER,
@@ -73,6 +74,18 @@ export function turnMapCover(dataToSubmit) {
 export function turnTest(dataToSubmit) {
   return {
     type: TURNTEST,
+    value: dataToSubmit,
+  };
+}
+
+/**
+ * 활성화 디바이스
+ * @param {string "DESKTOP_DEVICE"} dataToSubmit
+ * @returns
+ */
+export function turnDevice(dataToSubmit) {
+  return {
+    type: TURNDEVICE,
     value: dataToSubmit,
   };
 }

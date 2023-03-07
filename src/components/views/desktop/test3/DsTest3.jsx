@@ -8,6 +8,10 @@ import { turnMenu } from "../../../../redux/_actions/turn_action";
 function DsTest3() {
   const dispatch = useDispatch();
   const [data1, setData] = useState("");
+  useEffect(() => {
+    dispatch(turnMenu("TEST3_MENU"));
+    firstQuot();
+  }, [data1]);
   const firstQuot = useCallback(() => {
     if (!data1) {
       (async () => {
@@ -17,12 +21,7 @@ function DsTest3() {
         });
       })();
     }
-  }, []);
-
-  useEffect(() => {
-    dispatch(turnMenu("TEST3_MENU"));
-    firstQuot();
-  }, []);
+  }, [data1]);
 
   return <div className="Ds-container">{data1}</div>;
 }

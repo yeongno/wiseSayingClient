@@ -1,10 +1,13 @@
-import React, { useCallback, useEffect } from "react";
+/**
+ * 각 디바이스 마다 특정 역할 기능을 설정 하기 위한 훅
+ */
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const useTurnResponsive = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const menu = useSelector((state) => state?.turn?.turnMenu);
+  const menu = useSelector((state) => state?.turn?.turnDevice);
 
   //해당 맵 스위치 코드
   const executeMenu = useCallback(
@@ -19,26 +22,10 @@ const useTurnResponsive = () => {
     executeMenu(menu);
   }, [executeMenu]);
   const MenuValue = {
-    DESKTOP_DEVICE() {
-      navigate("/mainpage");
-    },
-    TEST2_MENU() {
-      navigate("/test2");
-    },
+    DESKTOP_DEVICE() {},
+    TABLET_DEVICE() {},
 
-    TEST3_MENU() {
-      //MenuBar를 클릭 시 디포트 페이지인 TEST1으로 이동 할 수 있게 설정
-      navigate("/test3");
-    },
-    LOGIN_MENU() {
-      navigate("/login");
-    },
-
-    // 기본 픽 페이지
-    SETTEST_MENU() {
-      //클릭 하였을 때는 COMMUNITY_MAIN() 실행
-      //기본 마운트 dispatch코드로 해당 빈 코드 실행
-    },
+    MOBILE_DEVICE() {},
   };
 };
 export default useTurnResponsive;

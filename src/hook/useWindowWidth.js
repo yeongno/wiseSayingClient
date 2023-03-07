@@ -16,10 +16,6 @@ function useWindowWidth() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(windowWidth);
-  }, [windowWidth]);
-
   return windowWidth;
 }
 

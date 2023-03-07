@@ -1,8 +1,10 @@
 import React, { Children, useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import useLaindgScroll from "../../../../hook/useLaindgScroll";
+import useTurnResponsive from "../../../../hook/useTurnResponsive";
 import useWindowWidth from "../../../../hook/useWindowWidth";
+import { turnDevice } from "../../../../redux/_actions/turn_action";
 import "../../../styles/desktop/landingPage/DsLandingPage.scss";
 import DsDrawer from "../drawer/DsDrawer";
 import DsHeader from "../header/DsHeader";
@@ -36,22 +38,16 @@ function DsLandingPage() {
   }, [turnMenu]);
   //각 디바이스 마다 outlet을 불러오게 함으로 랜더링이 중복됨을 방지 하기 위한 루트 코드
   const Ds_Ref = useRef();
-  const [activity, setActivity] = useState("");
-  const [render, setRender] = useState(false);
   const windth = useWindowWidth();
-
+  const dispatch = useDispatch();
+  const DEVICE = useSelector((state) => state?.turn?.turnDevice);
   useEffect(() => {
-    const ac = window?.getComputedStyle(Ds_Ref.current).display;
-    setActivity(ac);
-  }, [Ds_Ref.current, windth]);
-  useEffect(() => {
-    console.log(activity);
+    const activity = window?.getComputedStyle(Ds_Ref.current).display;
     if (activity == "block") {
-      setRender(true);
+      dispatch(turnDevice("DESKTOP_DEVICE"));
     } else if (activity == "none") {
-      setRender(false);
     }
-  }, [activity, windth]);
+  }, [windth]);
   return (
     <div className="Ds-container" ref={Ds_Ref}>
       <div className="DsLandingPage-container">
@@ -67,7 +63,8 @@ function DsLandingPage() {
         </div>
         <DsDrawer onBottom={onBottom} />
         <div className="DsLandingPage-wrapper" ref={dsbottom_Ref}>
-          {render && <Outlet />}
+          {DEVICE == "DESKTOP_DEVICE" && <Outlet />}
+          {/* {render && <Outlet />} */}
         </div>
       </div>
     </div>

@@ -35,3 +35,5 @@ export const SETMAPLIST_LIST = "setmaplist_list";
 export const SCROLL_LANDING = "scroll_landing";
 export const SCROLL_MARK = "scroll_mark";
 export const SCROLL_NOW = "scroll_now";
+
+export const TURNDEVICE = "TURNDEVICE";
