@@ -21,6 +21,12 @@ $desktop: 1366px;
 @mixin tablet {
   @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
     @content;
+    html,
+    body {
+      width: 100%;
+      max-width: 768px;
+      margin: 0 auto;
+    }
   }
 }
 // 크기가 desktop 이상
