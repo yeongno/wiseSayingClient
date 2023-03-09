@@ -3,6 +3,12 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   touch-action: pan-y;
+  transform-origin: center top;
+  transform: scale(1);
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 .TbLandingPage-container {
   position: absolute;
