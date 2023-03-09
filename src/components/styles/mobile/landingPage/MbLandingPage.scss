@@ -1,4 +1,7 @@
 @import "../../responsive";
+body {
+  overflow-x: hidden;
+}
 .MbLandingPage-container {
   position: absolute;
   .MbLandingPage-wrapper {

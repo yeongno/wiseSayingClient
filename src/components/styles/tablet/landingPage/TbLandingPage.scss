@@ -1,5 +1,7 @@
 @import "../../responsive";
-
+body {
+  overflow-x: hidden;
+}
 .TbLandingPage-container {
   position: absolute;
   top: 0;
