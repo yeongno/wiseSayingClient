@@ -13,6 +13,7 @@ import { turnDevice, turnDrawer } from "../../redux/_actions/turn_action";
 import DsLandingPage from "./desktop/landingPage/DsLandingPage";
 import MbLandingPage from "./mobile/landingPage/MbLandingPage";
 import TbLandingPage from "./tablet/landingPage/TbLandingPage";
+
 function LandingPage() {
   //landingPage 스크롤 할 때마다 마운트 시키기
   const nowY = useSelector((state) => state.scroll_reducer.landingScroll);

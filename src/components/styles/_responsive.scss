@@ -1,5 +1,11 @@
 // _responsive.scss
 
+// viewport 설정
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
 /*반응형 화면 크기*/
 $tablet: 768px;
 $desktop: 1366px;
@@ -8,21 +14,6 @@ $desktop: 1366px;
 @mixin mobile {
   @media (max-width: $tablet) {
     @content;
-  }
-}
-@media only screen and (max-width: $tablet) and (orientation: landscape) {
-  html,
-  body {
-    width: auto;
-    height: 100%;
-  }
-}
-
-@media only screen and (min-width: ($tablet + 1)) and (max-width: $desktop) and (orientation: landscape) {
-  html,
-  body {
-    width: auto;
-    height: 100%;
   }
 }
 
