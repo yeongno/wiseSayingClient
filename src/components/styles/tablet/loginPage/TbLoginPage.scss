@@ -1,32 +1,27 @@
-.DsLoginPage-container {
-  margin-top: 2rem;
+.TbLoginPage-container {
   width: 100vw;
-  .DsLoginPage-wrapper {
-    margin: 0 auto;
-    border-radius: 15px;
+  .TbLoginPage-wrapper {
     border: solid rgba(148, 146, 146, 0.445) 3px;
-    width: 50rem;
-    margin-bottom: 2rem;
+    border-radius: 15px;
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     .LoginTopsSection-container {
-      text-align: center;
-      span:nth-child(1) {
-        cursor: pointer;
-        font-size: 5em;
-        font-weight: bold;
-      }
     }
     .LoginBottomSection-container {
-      width: 40rem;
       margin: auto;
+      text-align: center;
       button {
-        margin-top: 1rem;
+        // margin-top: 1em;
         margin-bottom: 0.5rem;
-        width: 100%;
+        width: 95%;
         border-radius: 3px;
-        font-size: 3em;
+        font-size: 2em;
         color: white;
         cursor: pointer;
-        height: 4rem;
+        height: 3rem;
+
         background: rgb(105, 167, 173);
         border: none;
       }
@@ -35,9 +30,10 @@
       }
       .orSection__span {
         text-align: center;
-        font-size: 3em;
+        font-size: 1.8em;
       }
       img {
+        height: 4rem;
       }
     }
   }

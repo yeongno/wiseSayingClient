@@ -29,6 +29,7 @@ function DsLandingPage() {
     }
   }, [bottomY]);
 
+  //turnMenu 값에 따라 MenuBar 비/활성화
   useEffect(() => {
     if (turnMenu == "LOGIN_MENU") {
       setOnTopSection(false);
@@ -73,7 +74,6 @@ function DsLandingPage() {
         {Drawer == "POSSIBLE_DRAWER" && <DsDrawer onBottom={onBottom} />}
         <div className="DsLandingPage-wrapper" ref={dsbottom_Ref}>
           {DEVICE == "DESKTOP_DEVICE" && <Outlet />}
-          {/* {render && <Outlet />} */}
         </div>
       </div>
     </div>

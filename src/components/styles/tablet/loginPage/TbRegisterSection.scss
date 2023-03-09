@@ -1,0 +1,85 @@
+.TbregisterSection-container {
+  width: 100vw;
+  .TbregisterSection-wrapper {
+    margin-top: 3vh;
+    width: 70vw;
+
+    .topLogo-container {
+    }
+    .form-container {
+      .form-id {
+        display: flex;
+        justify-content: space-between;
+        input {
+          margin-left: 1%;
+          width: 84%;
+          box-sizing: border-box;
+          padding-left: 1.5vw;
+          height: 3rem;
+          font-size: 2em;
+        }
+        button {
+          margin-right: 2%;
+          margin-top: 0.2rem;
+          font-size: 0.5em;
+          height: 3rem;
+          width: 10%;
+          border: solid 2px rgb(227, 230, 225);
+          background: rgb(148, 255, 173);
+        }
+      }
+      .form-password {
+        input {
+          margin-left: 1%;
+          width: 97%;
+          box-sizing: border-box;
+          padding-left: 1.5vw;
+          height: 3rem;
+          font-size: 2em;
+        }
+        svg {
+          margin-top: 0.2rem;
+          position: absolute;
+          height: 4rem;
+          width: 7%;
+          opacity: 0.5;
+        }
+      }
+      .form-submit {
+        text-align: center;
+        button {
+          margin-top: 2vh;
+          border-radius: 3px;
+          font-size: 2em;
+          color: white;
+          cursor: pointer;
+          width: 95%;
+          height: 3rem;
+          background: rgb(110, 218, 230);
+          border: none;
+        }
+        button:hover {
+          background: rgb(148, 255, 173);
+        }
+      }
+      span {
+        z-index: -1;
+        display: block;
+        width: 100%;
+        margin-left: 1%;
+      }
+      input {
+        margin-left: 1%;
+        width: 97%;
+        box-sizing: border-box;
+        padding-left: 1.5vw;
+        height: 3rem;
+        font-size: 2em;
+        margin-bottom: 1.5vh;
+        margin-top: 0.4vh;
+      }
+      button {
+      }
+    }
+  }
+}
