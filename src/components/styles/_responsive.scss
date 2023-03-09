@@ -6,20 +6,30 @@ $desktop: 1366px;
 // $desktop: 1501px;
 // 크기가 tablet 이하
 @mixin mobile {
-  html {
-    touch-action: manipulation;
-    @media (max-width: $tablet) {
-      @content;
-    }
+  @media (max-width: $tablet) {
+    @content;
   }
 }
+@media only screen and (max-width: $tablet) and (orientation: landscape) {
+  html,
+  body {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: ($tablet + 1)) and (max-width: $desktop) and (orientation: landscape) {
+  html,
+  body {
+    width: auto;
+    height: 100%;
+  }
+}
+
 // 크기가 tablet+1 이상, desktop 이하
 @mixin tablet {
-  html {
-    touch-action: manipulation;
-    @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
-      @content;
-    }
+  @media (min-width: ($tablet + 1)) and (max-width: $desktop) {
+    @content;
   }
 }
 // 크기가 desktop 이상
