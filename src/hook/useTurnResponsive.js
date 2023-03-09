@@ -24,7 +24,6 @@ const useTurnResponsive = () => {
   const MenuValue = {
     DESKTOP_DEVICE() {},
     TABLET_DEVICE() {},
-
     MOBILE_DEVICE() {},
   };
 };
