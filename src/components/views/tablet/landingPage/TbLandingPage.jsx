@@ -23,15 +23,18 @@ function TbLandingPage() {
   }, [windth]);
 
   return (
-    <div className="Tb-container" ref={Tb_Ref}>
-      <div className="TbLandingPage-container">
-        <TbDrawer />
-        <div className="TbLandingPage-wrapper">
-          {/* {render && <Outlet />} */}
-          {DEVICE == "TABLET_DEVICE" && <Outlet />}
+    <>
+      <div className="Tb-container" ref={Tb_Ref}>
+        <div className="TbLandingPage-container">
+          <TbDrawer />
+          <div className="TbLandingPage-wrapper">
+            {/* {render && <Outlet />} */}
+            {DEVICE == "TABLET_DEVICE" && <Outlet />}
+          </div>
         </div>
       </div>
-    </div>
+      <div className="item"></div>
+    </>
   );
 }
 
