@@ -9,14 +9,21 @@ import LoginSection from "./LoginSection";
 import RegisterSection from "./RegisterSection";
 import "../../../styles/desktop/loginPage/DsLoginPage.scss";
 import { GoogleAuthProvider, signInWithPopup } from "@firebase/auth";
+import { turnDrawer } from "../../../../redux/_actions/turn_action";
+import { useDispatch } from "react-redux";
 
 function DsLoginPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    dispatch(turnDrawer("IMPOSSIBLE_DRAWER"));
+  }, []);
 
   const onSocialClick = async (event) => {
     const provider = new GoogleAuthProvider(); // provider를 구글로 설정

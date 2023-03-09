@@ -1,5 +1,6 @@
 import {
   TURNDEVICE,
+  TURNDRAWER,
   TURNFORUM,
   TURNMAP,
   TURNMAPCOVER,
@@ -24,6 +25,8 @@ export default function turn(state = {}, action) {
       return { ...state, turnMapCover: action.value };
     case TURNDEVICE:
       return { ...state, turnDevice: action.value };
+    case TURNDRAWER:
+      return { ...state, turnDRAWER: action.value };
     default:
       return state;
   }

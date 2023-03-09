@@ -37,3 +37,5 @@ export const SCROLL_MARK = "scroll_mark";
 export const SCROLL_NOW = "scroll_now";
 
 export const TURNDEVICE = "TURNDEVICE";
+
+export const TURNDRAWER = "TURNDRAWER";

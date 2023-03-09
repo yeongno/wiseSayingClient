@@ -1,5 +1,6 @@
 import {
   TURNDEVICE,
+  TURNDRAWER,
   TURNFORUM,
   TURNMAP,
   TURNMAPCOVER,
@@ -86,6 +87,19 @@ export function turnTest(dataToSubmit) {
 export function turnDevice(dataToSubmit) {
   return {
     type: TURNDEVICE,
+    value: dataToSubmit,
+  };
+}
+
+/**
+ * 활성화 디바이스
+ * "POSSIBLE_DRAER", "IMPOSSIBLE_DRAWER"
+ * @param {string "POSSIBLE_DRAWER"} dataToSubmit
+ * @returns
+ */
+export function turnDrawer(dataToSubmit) {
+  return {
+    type: TURNDRAWER,
     value: dataToSubmit,
   };
 }

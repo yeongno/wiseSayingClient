@@ -9,7 +9,7 @@ import useLaindgScroll from "../../hook/useLaindgScroll";
 import useMenuSelector from "../../hook/useMenuSelector";
 import useTurnResponsive from "../../hook/useTurnResponsive";
 import useWindowWidth from "../../hook/useWindowWidth";
-import { turnDevice } from "../../redux/_actions/turn_action";
+import { turnDevice, turnDrawer } from "../../redux/_actions/turn_action";
 import DsLandingPage from "./desktop/landingPage/DsLandingPage";
 import MbLandingPage from "./mobile/landingPage/MbLandingPage";
 import TbLandingPage from "./tablet/landingPage/TbLandingPage";
@@ -23,7 +23,6 @@ function LandingPage() {
   useEffect(() => {
     navigate("/mainpage");
   }, []);
-
   return (
     //각 디바이스의 랜딩 페이지
     <div>

@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import useLaindgScroll from "../../../../hook/useLaindgScroll";
 import useTurnResponsive from "../../../../hook/useTurnResponsive";
 import useWindowWidth from "../../../../hook/useWindowWidth";
-import { turnDevice } from "../../../../redux/_actions/turn_action";
+import { turnDevice, turnDrawer } from "../../../../redux/_actions/turn_action";
 import "../../../styles/desktop/landingPage/DsLandingPage.scss";
 import DsDrawer from "../drawer/DsDrawer";
 import DsHeader from "../header/DsHeader";
@@ -48,6 +48,15 @@ function DsLandingPage() {
     } else if (activity == "none") {
     }
   }, [windth]);
+
+  // Drawer 비/활성화 값을 받아 활성화
+  const GetDrawer = useSelector((state) => state.turn.turnDRAWER);
+  const [Drawer, setDrawer] = useState("POSSIBLE_DRAWER");
+  useEffect(() => {
+    setDrawer(GetDrawer);
+    console.log(GetDrawer);
+  }, [GetDrawer]);
+
   return (
     <div className="Ds-container" ref={Ds_Ref}>
       <div className="DsLandingPage-container">
@@ -61,7 +70,7 @@ function DsLandingPage() {
             <></>
           )}
         </div>
-        <DsDrawer onBottom={onBottom} />
+        {Drawer == "POSSIBLE_DRAWER" && <DsDrawer onBottom={onBottom} />}
         <div className="DsLandingPage-wrapper" ref={dsbottom_Ref}>
           {DEVICE == "DESKTOP_DEVICE" && <Outlet />}
           {/* {render && <Outlet />} */}
