@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import "../../../styles/mobile/drawer/MbDrawer.scss";
 import { MenuOutlined } from "@ant-design/icons";
 import { turnMenu } from "../../../../redux/_actions/turn_action";
+import { auth } from "../../../../config/FireBaseConfig";
 
 function MbDrawer() {
   const dispatch = useDispatch();
@@ -41,6 +42,16 @@ function MbDrawer() {
     }
   }, [onDrawer]);
 
+  //로그인 값에 따라 로그인/로그아웃 활성화
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
   return (
     <div className="MbDrawer-container">
       <div className="MbDrawer-wrapper">
@@ -57,13 +68,23 @@ function MbDrawer() {
         <div className="drawer-main" ref={Content_Ref}>
           <ul>
             <ol>계정 관련 메뉴</ol>
-            <li
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              로그인
-            </li>
+            {isLoggedIn ? (
+              <li
+                onClick={() => {
+                  auth.signOut();
+                }}
+              >
+                로그아웃
+              </li>
+            ) : (
+              <li
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                로그인
+              </li>
+            )}
             <li>알림</li>
             <li>내 정보 변경</li>
             <ol>주요 페이지</ol>

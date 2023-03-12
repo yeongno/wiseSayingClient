@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { turnMenu } from "../../../../redux/_actions/turn_action";
 import "../../../styles/desktop/drawer/DsDrawer.scss";
+import { auth } from "../../../../config/FireBaseConfig";
 
 function DsDrawer({ onBottom }) {
   const dispatch = useDispatch();
@@ -29,8 +30,16 @@ function DsDrawer({ onBottom }) {
       Menu_Ref.current.style.pointerEvents = "none";
     }
   }, [onBottom]);
+
+  //로그인 값에 따라 로그인/로그아웃 활성화
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    console.log("top");
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   //메뉴 버튼 클릭 시 상세 메뉴드로워 뷰 활성화
@@ -79,13 +88,24 @@ function DsDrawer({ onBottom }) {
         <div className="drawer-main" ref={Content_Ref}>
           <ul>
             <ol>계정 관련 메뉴</ol>
-            <li
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              로그인
-            </li>
+
+            {isLoggedIn ? (
+              <li
+                onClick={() => {
+                  auth.signOut();
+                }}
+              >
+                로그아웃
+              </li>
+            ) : (
+              <li
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                로그인
+              </li>
+            )}
             <li>알림</li>
             <li>내 정보 변경</li>
             <ol>주요 페이지</ol>
