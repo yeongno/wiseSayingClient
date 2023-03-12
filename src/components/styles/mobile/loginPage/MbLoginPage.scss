@@ -1,0 +1,40 @@
+.MbLoginPage-container {
+  width: 100vw;
+  .MbLoginPage-wrapper {
+    border: solid rgba(148, 146, 146, 0.445) 3px;
+    border-radius: 15px;
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    .LoginTopsSection-container {
+    }
+    .LoginBottomSection-container {
+      margin: auto;
+      text-align: center;
+      button {
+        // margin-top: 1em;
+        margin-bottom: 0.5rem;
+        width: 95%;
+        border-radius: 3px;
+        font-size: 2em;
+        color: white;
+        cursor: pointer;
+        height: 3rem;
+
+        background: rgb(105, 167, 173);
+        border: none;
+      }
+      button:hover {
+        background: rgb(148, 255, 173);
+      }
+      .orSection__span {
+        text-align: center;
+        font-size: 1.8em;
+      }
+      img {
+        height: 4rem;
+      }
+    }
+  }
+}

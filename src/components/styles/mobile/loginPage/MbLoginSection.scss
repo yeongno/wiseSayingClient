@@ -1,0 +1,62 @@
+.MbloginSection-container {
+  width: 100vw;
+  .loginSection-wrapper {
+    margin-top: 3rem;
+    width: 70vw;
+    // width: 70%;
+
+    .topLogo-container {
+    }
+    .form-container {
+      .form-id {
+        text-align: center;
+        input {
+        }
+      }
+      .form-password {
+        text-align: center;
+        input {
+        }
+        svg {
+          margin-top: 0.2rem;
+          position: absolute;
+          height: 4rem;
+          width: 7%;
+          opacity: 0.5;
+        }
+      }
+      .form-submit {
+        text-align: center;
+        button {
+          border-radius: 3px;
+          font-size: 2em;
+          color: white;
+          cursor: pointer;
+          width: 95%;
+          height: 3rem;
+          background: rgb(110, 218, 230);
+          border: none;
+        }
+        button:hover {
+          background: rgb(148, 255, 173);
+        }
+      }
+      span {
+        display: block;
+        width: 100%;
+        margin-bottom: 2vh;
+        margin-left: 1vw;
+      }
+      input {
+        box-sizing: border-box;
+        padding-left: 1.5vw;
+        margin-bottom: 1.7rem;
+        width: 95%;
+        height: 3rem;
+        font-size: 2em;
+      }
+      button {
+      }
+    }
+  }
+}
