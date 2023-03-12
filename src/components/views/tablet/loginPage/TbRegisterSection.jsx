@@ -129,33 +129,29 @@ function TbRegisterSection() {
               중복 확인
             </button>{" "}
           </div>
+          <span>비밀번호</span>
           {!checkPassword && (
             <span
               style={{
-                position: "absolute",
-                marginLeft: "12rem",
                 color: "red",
               }}
             >
               숫자+영문자+특수문자 조합으로 8자리 이상 사용해야 합니다.
             </span>
           )}{" "}
-          <span>비밀번호</span>
           <div className="form-password">
             <input type="password" name="password" onChange={onPassword} />
           </div>
+          <span>비밀번호 재확인</span>
           {!checkMatchPW && (
             <span
               style={{
-                position: "absolute",
-                marginLeft: "26rem",
                 color: "red",
               }}
             >
               비밀번호와 일치하지 않습니다.
             </span>
           )}
-          <span>비밀번호 재확인</span>
           <input
             type="password"
             name="confirmPassword"
