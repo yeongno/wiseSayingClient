@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 2rem;
+  height: 5vh;
   background: rgba($color: #a7e1efcc, $alpha: 1);
   font-size: 1.3em;
   .TbDrawer-wrapper {
@@ -40,7 +40,7 @@
       //   background: rgba(128, 169, 201, 0.662);
     }
     .drawer-main {
-      padding-top: 10vh;
+      padding-top: 5vh;
       width: 50vw;
       height: 100vh;
       font-size: 0.7em;
@@ -55,14 +55,14 @@
         cursor: default;
         color: white;
         font-weight: bold;
-        font-size: 2em;
+        font-size: 1.4em;
         margin-bottom: 1rem;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
       }
       li {
         cursor: pointer;
-        font-size: 1.3em;
-        margin-bottom: 0.5rem;
+        font-size: 1em;
+        margin-bottom: 0.3rem;
         &:hover {
           color: white;
         }
