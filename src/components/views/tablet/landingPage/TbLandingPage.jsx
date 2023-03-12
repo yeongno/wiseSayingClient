@@ -26,7 +26,7 @@ function TbLandingPage() {
     <>
       <div className="Tb-container" ref={Tb_Ref}>
         <div className="TbLandingPage-container">
-          <TbDrawer />
+          {/* <TbDrawer /> */}
           <div className="TbLandingPage-wrapper">
             {/* {render && <Outlet />} */}
             {DEVICE == "TABLET_DEVICE" && <Outlet />}
