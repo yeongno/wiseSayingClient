@@ -30,10 +30,12 @@ function DsTest2() {
   const filterCheck = useCallback(() => {
     if (!data2) {
       (async () => {
-        await instance.get("/api/qotds/filter/inspiration").then((res) => {
-          console.log("2", res);
-          setData(res);
-        });
+        await instance
+          .post("/api/qotds/quotes/filter/topic", { topic: "comic" })
+          .then((res) => {
+            console.log("2", res);
+            setData(res);
+          });
       })();
     }
   }, [data2]);
