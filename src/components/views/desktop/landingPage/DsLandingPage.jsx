@@ -1,6 +1,7 @@
 import React, { Children, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
+import instance from "../../../../axios";
 import useLaindgScroll from "../../../../hook/useLaindgScroll";
 import useTurnResponsive from "../../../../hook/useTurnResponsive";
 import useWindowWidth from "../../../../hook/useWindowWidth";
@@ -55,9 +56,7 @@ function DsLandingPage() {
   const [Drawer, setDrawer] = useState("POSSIBLE_DRAWER");
   useEffect(() => {
     setDrawer(GetDrawer);
-    console.log(GetDrawer);
   }, [GetDrawer]);
-
   return (
     <div className="Ds-container" ref={Ds_Ref}>
       <div className="DsLandingPage-container">
