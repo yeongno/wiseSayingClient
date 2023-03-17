@@ -16,8 +16,8 @@ function DsTest3() {
     if (!data1) {
       (async () => {
         await instance.get("/api/qotds/qotd").then((res) => {
-          console.log(res.data.quote);
-          setData(res.data.quote.body);
+          console.log(res.data);
+          setData(res.data.quote);
         });
       })();
     }
